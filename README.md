@@ -79,6 +79,6 @@ npx kill-port 5000
 This microservice should be run locally on Ruben’s machine.
 Ruben’s web app should make requests to http://localhost:5000/items to retrieve inventory information.
 
-
+# UML Sequence Diagram - Fetch All Items (GET /Items)
 ![image](https://github.com/user-attachments/assets/6e6da22a-8423-497d-af20-a4bd3bb3a0eb)
 
