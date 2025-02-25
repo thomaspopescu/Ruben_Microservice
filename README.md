@@ -1,17 +1,17 @@
-Inventory Microservice – Ruben_Microservice
-Author: Thomas Popescu
-Description: This microservice provides inventory item information to Ruben’s web application via a REST API. It interacts with a PostgreSQL database to retrieve item details.
+# Inventory Microservice – Ruben_Microservice
+### Author: Thomas Popescu
+### Description: This microservice provides inventory item information to Ruben’s web application via a REST API. It interacts with a PostgreSQL database to retrieve item details.
 
 How to Set Up and Run the Microservice
 
-1️⃣ Prerequisites
+# 1️⃣ Prerequisites
 Make sure the following are installed:
 
 Node.js (latest LTS version)
 PostgreSQL (latest version)
 Git (for pulling the repo)
 
-2️⃣ Installation & Setup
+# 2️⃣ Installation & Setup
 Clone the Repository:
 git clone https://github.com/thomaspopescu/CS361-Project.git
 cd CS361-Project/Ruben_Microservice
@@ -33,7 +33,7 @@ item_name TEXT NOT NULL,
 cost INT NOT NULL
 );
 
-3️⃣ Running the Microservice
+# 3️⃣ Running the Microservice
 Start the microservice by running:
 node server.js
 
@@ -42,8 +42,9 @@ If successful, you should see:
 ✅ Connected to PostgreSQL
 
 
-📡 How to Request and Receive Data
-1. Request Inventory Data
+# 📡 How to Request and Receive Data
+
+## 1. Request Inventory Data
 Endpoint: GET /items
 Request Example:
 curl -X GET http://localhost:5000/items
@@ -54,7 +55,7 @@ Response Example:
 {"item_id": 2, "item_name": "Monitor", "cost": 300}
 ]
 
-2. Receive Inventory Data
+## 2. Receive Inventory Data
 The response returns an array of objects, each containing:
 
 item_id – Unique identifier of the item
