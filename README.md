@@ -61,3 +61,20 @@ The response returns an array of objects, each containing:
 item_id – Unique identifier of the item
 item_name – Name of the item
 cost – Cost of the item in integer format
+
+
+# ❓ Troubleshooting
+PostgreSQL Connection Error?
+
+Ensure PostgreSQL is running:
+sudo service postgresql start (Linux/macOS)
+net start postgresql (Windows)
+Check database credentials in server.js
+Port 5000 Already in Use?
+
+Kill the process using:
+npx kill-port 5000
+
+# 🛠️ Integration Notes
+This microservice should be run locally on Ruben’s machine.
+Ruben’s web app should make requests to http://localhost:5000/items to retrieve inventory information.
