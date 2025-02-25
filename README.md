@@ -1,53 +1,62 @@
-# Inventory Microservice for Ruben
+Inventory Microservice – Ruben_Microservice
+Author: Thomas Popescu
+Description: This microservice provides inventory item information to Ruben’s web application via a REST API. It interacts with a PostgreSQL database to retrieve item details.
 
-## 📌 Overview
-This microservice provides inventory management functionality, allowing users to:
-- Retrieve all items from the database.
-- Add new items to the inventory.
-- Delete items from the inventory.
+How to Set Up and Run the Microservice
 
-## 🔗 API Endpoints
+1️⃣ Prerequisites
+Make sure the following are installed:
 
-### ✅ Get All Items
-**Request:**
-```http
-GET /items
+Node.js (latest LTS version)
+PostgreSQL (latest version)
+Git (for pulling the repo)
+
+2️⃣ Installation & Setup
+Clone the Repository:
+git clone https://github.com/thomaspopescu/CS361-Project.git
+cd CS361-Project/Ruben_Microservice
+
+Install Dependencies:
+npm install
+
+Set Up PostgreSQL Database:
+
+Open pgAdmin4 or any PostgreSQL interface.
+Create a database called:
+CREATE DATABASE inventory_db;
+Switch to inventory_db:
+\c inventory_db
+Create the items table:
+CREATE TABLE items (
+item_id SERIAL PRIMARY KEY,
+item_name TEXT NOT NULL,
+cost INT NOT NULL
+);
+
+3️⃣ Running the Microservice
+Start the microservice by running:
+node server.js
+
+If successful, you should see:
+✅ Server running on http://localhost:5000
+✅ Connected to PostgreSQL
 
 
-Example Response
+📡 How to Request and Receive Data
+1. Request Inventory Data
+Endpoint: GET /items
+Request Example:
+curl -X GET http://localhost:5000/items
+
+Response Example:
 [
-    {"item_id": 1, "item_name": "Laptop", "cost": 1000},
-    {"item_id": 2, "item_name": "Monitor", "cost": 300}
+{"item_id": 1, "item_name": "Laptop", "cost": 1000},
+{"item_id": 2, "item_name": "Monitor", "cost": 300}
 ]
 
-Add New Item
-Request
+2. Receive Inventory Data
+The response returns an array of objects, each containing:
 
-POST /items
-Content-Type: application/json
-{
-    "itemname": "Mouse",
-    "cost": 25
-}
-
-Example Response
-
-{
-    "item_id": 3,
-    "item_name": "Mouse",
-    "cost": 25
-}
-
----
-
-Delete an Item 
-
-DELETE /items/3
-
----
-
-Example Response 
-
-{
-    "message": "Item 3 deleted"
-}
+item_id – Unique identifier of the item
+item_name – Name of the item
+cost – Cost of the item in integer format
