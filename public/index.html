@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Inventory Manager</h2>
+
+    <button onclick="fetchItems()">Show All Items</button>
+
+    <h3>Add Item</h3>
+    <input type="text" id="itemName" placeholder="Item Name">
+    <input type="number" id="itemCost" placeholder="Cost">
+    <button onclick="addItem()">Add Item</button>
+
+    <h3>Items List</h3>
+    <ul id="itemList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
